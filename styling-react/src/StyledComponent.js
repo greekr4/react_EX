@@ -1,10 +1,40 @@
 import styled, { css } from 'styled-components'
 
+const sizes = {
+  desktop: 1024,
+  tablet: 768
+};
+
+const media = Object.keys(sizes).reduce((acc,label) => {
+  acc[label] = (...args) => css`
+  @media (max-width: ${sizes[label] / 16}em) {
+    ${css(...args)};
+  }`;
+  return acc;
+
+  
+}, {});
+
 const Box = styled.div`
 /* props로 넣어 준 값을 직접 전달해 줄 수 있습니다.*/
 background: ${props => props.color || 'blue'};
 padding: 1rem;
 display: flex;
+
+
+/* 기본 가로크기 1024px 가운데 정렬
+가로 크기가 작아지면 크기 줄이고
+768 미만이면 꽉채우기 */
+width: 1024px;
+margin: 0 auto;
+/* @media (max-width: 1024px) {
+  width: 768px;
+}
+@media (max-width: 768px){
+  width: 100%;
+} */
+${media.desktop`width: 768px`}
+${media.tablet`width:100%`};
 `;
 
 const Button = styled.button`
