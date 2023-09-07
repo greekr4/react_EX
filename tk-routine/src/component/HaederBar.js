@@ -11,7 +11,7 @@ background-color: aqua;
 const HaderBar = () =>{
 
     return(
-        <Haderwrap/>
+        <Haderwrap>zz</Haderwrap>
     );
 };
 

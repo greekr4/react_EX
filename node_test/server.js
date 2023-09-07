@@ -62,8 +62,8 @@ async function getSelect2(req, res,num) {
 
         const result = await connection.execute(
             `SELECT * 
-            FROM BOARD WHERE SEQNO = :num
-            ` ,{num : num}
+            FROM BOARD
+            ` 
         );
 
         console.log(result)
