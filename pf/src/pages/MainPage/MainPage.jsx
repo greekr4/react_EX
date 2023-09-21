@@ -3,6 +3,7 @@ import { styled } from 'styled-components';
 import Header from '../../components/Header/Header';
 import CardBox from '../../components/CardBox';
 import SkillBox from '../../components/SkillBox';
+import ArchiveBox from '../../components/ArchiveBox';
 
 const MainPage = () => {
   const content = [
@@ -85,7 +86,7 @@ const MainPage = () => {
   `;
 
   const ArticelWrap = styled.div`
-    margin: 30px;
+    margin: 0 20px 0 20px;
   `;
 
   const ArticleTitle = styled.div`
@@ -135,6 +136,17 @@ const MainPage = () => {
           <ArticelWrap>
             <ArticleTitle>Title 2</ArticleTitle>
             <SkillBox />
+          </ArticelWrap>
+        </ArticelEl>
+        <ArticelEl bgColor="#464646">
+          <ArticelWrap>
+            <ArticleTitle fontColor="#ffffff">Title 3</ArticleTitle>
+            <ArchiveBox />
+          </ArticelWrap>
+        </ArticelEl>
+        <ArticelEl bgColor="#5f9ca0">
+          <ArticelWrap>
+            <ArticleTitle fontColor="#ffffff">Title 4</ArticleTitle>
           </ArticelWrap>
         </ArticelEl>
       </Desktop>
