@@ -1,4 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
+import { styled } from 'styled-components';
 
 const Footer = () => {
   const Desktop = ({ children }) => {
@@ -20,9 +21,19 @@ const Footer = () => {
     const isNotMobile = useMediaQuery({ minWidth: 768 });
     return isNotMobile ? children : null;
   };
+
+  const Footer = styled.footer`
+    display: block;
+    width: 100%;
+  `;
+
+  const IconBox = styled.div``;
+
   return (
     <>
-      <div>푸터임</div>
+      <Footer>
+        <IconBox>dd</IconBox>
+      </Footer>
     </>
   );
 };

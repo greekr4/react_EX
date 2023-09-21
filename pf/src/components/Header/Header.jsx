@@ -1,9 +1,9 @@
 import { useMediaQuery } from 'react-responsive';
-import CSS from './Header.css';
 import { useState } from 'react';
+import { styled, css } from 'styled-components';
 
 const Header = () => {
-  const [MobMenuShow, SetMobMenuShow] = useState({ display: 'none' });
+  const [MobMenuShow, SetMobMenuShow] = useState('none');
 
   const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -26,45 +26,88 @@ const Header = () => {
   };
 
   const HandleClick = e => {
-    if (MobMenuShow.display == 'block') {
-      SetMobMenuShow({ display: 'none' });
+    if (MobMenuShow == 'block') {
+      SetMobMenuShow('none');
     } else {
-      SetMobMenuShow({ display: 'block' });
+      SetMobMenuShow('block');
     }
   };
 
+  const Header = styled.header`
+    display: block;
+    position: fixed;
+    background-color: transparent;
+    height: 100px;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 1px solid #000000;
+    ${props =>
+      props.mob &&
+      css`
+        height: 5vh;
+      `}
+  `;
+
+  const HeaderBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 1.5vh auto;
+  `;
+
+  const MenuBox = styled.div`
+    display: flex;
+  `;
+
+  const Title = styled.div``;
+
+  const MobMenuListBox = styled.div`
+    display: ${MobMenuShow};
+    width: 100%;
+  `;
+
+  const PcMenuBtn = styled.div`
+    margin: 0 0.5vh 0 0.5vh;
+  `;
+
+  const Hamburger = styled.button``;
+
+  const MobMenuList = styled.div`
+    display: grid;
+    margin: 1vh;
+  `;
   return (
     <>
       <Desktop>
-        <header className="PcHeader">
-          <div className="header_box">
-            <div className="title">ㅇㅇ</div>
-            <div className="PcMenuBox">
-              <div className="PcMenuBtn">메asfas뉴1</div>
-              <div className="PcMenuBtn">메뉴asfas2</div>
-              <div className="PcMenuBtn">메뉴asdas3</div>
-              <div className="PcMenuBtn">메fasfas뉴4</div>
-            </div>
-          </div>
-        </header>
+        <Header>
+          <HeaderBox>
+            <Title>타이틀</Title>
+            <MenuBox>
+              <PcMenuBtn>메뉴1</PcMenuBtn>
+              <PcMenuBtn>메뉴2</PcMenuBtn>
+              <PcMenuBtn>메뉴3</PcMenuBtn>
+              <PcMenuBtn>메뉴4</PcMenuBtn>
+            </MenuBox>
+          </HeaderBox>
+        </Header>
       </Desktop>
       <Mobile>
-        <header className="MobHeader">
-          <div className="header_box">
-            <div className="title">ㅇㅇ</div>
-            <div className="MobMenuBox">
-              <button onClick={HandleClick}>햄버거</button>
-            </div>
-          </div>
-          <div className="MobMenuListBox" style={MobMenuShow}>
-            <div className="MobMenuList">
+        <Header mob>
+          <HeaderBox>
+            <Title>타이틀</Title>
+            <MenuBox>
+              <Hamburger onClick={HandleClick}>햄버거</Hamburger>
+            </MenuBox>
+          </HeaderBox>
+          <MobMenuListBox>
+            <MobMenuList>
               <div>메뉴1</div>
               <div>메뉴1</div>
               <div>메뉴1</div>
               <div>메뉴1</div>
-            </div>
-          </div>
-        </header>
+            </MobMenuList>
+          </MobMenuListBox>
+        </Header>
       </Mobile>
     </>
   );
