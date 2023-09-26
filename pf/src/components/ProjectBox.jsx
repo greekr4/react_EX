@@ -18,8 +18,9 @@ const ProjectItem = styled.div`
   margin: 1rem;
   background-color: white;
   border-radius: 10px;
-  width: 50rem;
+  width: 70rem;
   padding: 1rem;
+  /* height: ${props => props.height}; */
 `;
 
 const ProjectTitle = styled.div`
@@ -33,6 +34,7 @@ const ProjectSubTitle = styled.div`
   text-align: center;
   padding: 0.5rem;
   color: #7f7f7f;
+  margin-bottom: 1rem;
 `;
 
 const ProjectContentWrap = styled.div`
@@ -41,15 +43,15 @@ const ProjectContentWrap = styled.div`
 
 const ProjectContentSliderWrap = styled.div`
   width: 50%;
-  height: 20rem;
+  height: 30rem;
 `;
-
-const ProjectContentSlider = styled.div``;
 
 const ProjectContentExplanWrap = styled.div`
   width: 50%;
-  height: 20rem;
+  height: 30rem;
 `;
+
+const ProjectContentSlider = styled.div``;
 
 const SliderBox = styled.div`
   width: 85%;
@@ -92,15 +94,47 @@ const settings = {
 
 const Testdiv = styled.div`
   width: 100%;
-  height: 18rem;
+  height: 28rem;
   background-color: aliceblue;
+`;
+
+const MainDescription = styled.div`
+  width: 100%;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+`;
+
+const SubDescriptionBox = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const SubDescriptionLabel = styled.div`
+  display: inline-block;
+  width: 8rem;
+  vertical-align: top;
+  font-weight: 600;
+
+  &&::before {
+    content: '✔';
+    display: inline;
+    padding-right: 0.5rem;
+  }
+`;
+
+const SubDescriptionValue = styled.div`
+  display: inline-block;
+  width: calc(100% - 10rem);
+  vertical-align: middle;
+  font-weight: 400;
 `;
 
 const ProjectBox = () => {
   return (
     <SkillWrap>
       <ItemWrap>
-        <ProjectItem>
+        <ProjectItem height="50rem">
           <ProjectTitle>Title</ProjectTitle>
           <ProjectSubTitle>Subtitle</ProjectSubTitle>
           <ProjectContentWrap>
@@ -121,7 +155,40 @@ const ProjectBox = () => {
                 </SliderBox>
               </ProjectContentSlider>
             </ProjectContentSliderWrap>
-            <ProjectContentExplanWrap>dd</ProjectContentExplanWrap>
+            <ProjectContentExplanWrap>
+              <MainDescription>
+                MainDescriptionMainDescriptionMainDescriptionMainDescriptionMainDescriptionMainDescriptionMainDescription
+                MainDescriptionMainDescription
+              </MainDescription>
+              <SubDescriptionBox>
+                <SubDescriptionLabel>라벨</SubDescriptionLabel>
+                <SubDescriptionValue>
+                  벨류벨류벨류벨류벨류벨류벨류벨류벨류
+                  벨류벨류벨류벨류벨류벨류벨류
+                </SubDescriptionValue>
+              </SubDescriptionBox>
+              <SubDescriptionBox>
+                <SubDescriptionLabel>라벨</SubDescriptionLabel>
+                <SubDescriptionValue>
+                  벨류벨류벨류벨류벨류벨류벨류벨류벨류
+                  벨류벨류벨류벨류벨류벨류벨류
+                </SubDescriptionValue>
+              </SubDescriptionBox>
+              <SubDescriptionBox>
+                <SubDescriptionLabel>라벨</SubDescriptionLabel>
+                <SubDescriptionValue>
+                  벨류벨류벨류벨류벨류벨류벨류벨류벨류
+                  벨류벨류벨류벨류벨류벨류벨류
+                </SubDescriptionValue>
+              </SubDescriptionBox>
+              <SubDescriptionBox>
+                <SubDescriptionLabel>라벨</SubDescriptionLabel>
+                <SubDescriptionValue>
+                  벨류벨류벨류벨류벨류벨류벨류벨류벨류
+                  벨류벨류벨류벨류벨류벨류벨류
+                </SubDescriptionValue>
+              </SubDescriptionBox>
+            </ProjectContentExplanWrap>
           </ProjectContentWrap>
         </ProjectItem>
       </ItemWrap>

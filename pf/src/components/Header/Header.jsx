@@ -1,9 +1,21 @@
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { styled, css } from 'styled-components';
 
 const Header = () => {
   const [MobMenuShow, SetMobMenuShow] = useState('none');
+  const [ScrollY, SetScrollY] = useState(0);
+  const [ScrollActive, setScrollActive] = useState(false);
+
+  const handleScroll = () => {
+    if (ScrollY > 299) {
+      SetScrollY(window.scrollY);
+      setScrollActive(true);
+    } else {
+      SetScrollY(window.scrollY);
+      setScrollActive(false);
+    }
+  };
 
   const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -25,22 +37,14 @@ const Header = () => {
     return isNotMobile ? children : null;
   };
 
-  const HandleClick = e => {
-    if (MobMenuShow == 'block') {
-      SetMobMenuShow('none');
-    } else {
-      SetMobMenuShow('block');
-    }
-  };
-
-  const Header = styled.header`
+  const HeaderMain = styled.header`
     display: block;
     position: fixed;
     background-color: transparent;
     height: 100px;
     width: 100%;
     z-index: 10;
-    border-bottom: 1px solid #000000;
+
     ${props =>
       props.mob &&
       css`
@@ -76,10 +80,19 @@ const Header = () => {
     display: grid;
     margin: 1vh;
   `;
+
+  const HandleClick = e => {
+    if (MobMenuShow == 'block') {
+      SetMobMenuShow('none');
+    } else {
+      SetMobMenuShow('block');
+    }
+  };
+
   return (
     <>
       <Desktop>
-        <Header>
+        <HeaderMain>
           <HeaderBox>
             <Title>타이틀</Title>
             <MenuBox>
@@ -89,10 +102,10 @@ const Header = () => {
               <PcMenuBtn>메뉴4</PcMenuBtn>
             </MenuBox>
           </HeaderBox>
-        </Header>
+        </HeaderMain>
       </Desktop>
       <Mobile>
-        <Header mob>
+        <HeaderMain mob>
           <HeaderBox>
             <Title>타이틀</Title>
             <MenuBox>
@@ -107,7 +120,7 @@ const Header = () => {
               <div>메뉴1</div>
             </MobMenuList>
           </MobMenuListBox>
-        </Header>
+        </HeaderMain>
       </Mobile>
     </>
   );
