@@ -1,14 +1,20 @@
 import styled from 'styled-components';
+import frontend_img from '../assets/images/frontend.png';
+import backend_img from '../assets/images/backend.png';
+import mobile_img from '../assets/images/mobile.png';
+import other_img from '../assets/images/other.png';
 
 const SkillWrap = styled.div`
-  height: 70rem;
+  height: 55rem;
 `;
 
 const ItemWrap = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-content: space-around;
-  height: calc(100% - (7.5rem));
+  height: calc(100% - (2rem));
+  width: 60%;
+  margin: 0 auto;
 `;
 
 const SkillItem = styled.div`
@@ -21,7 +27,9 @@ const SkillItem = styled.div`
 
 const SkillTitle = styled.div`
   font-size: 2rem;
+  font-weight: 600;
   padding: 0.5rem;
+  color: darkorange;
   border-bottom: 1px solid #456783;
 `;
 
@@ -34,47 +42,30 @@ const Skill = styled.div`
   margin: 10px;
 `;
 
+const SkillImg = styled.img`
+  display: block;
+  width: 100%;
+`;
+
 const SkillBox = () => {
   return (
     <SkillWrap>
       <ItemWrap>
         <SkillItem>
-          <SkillTitle>Skill Title</SkillTitle>
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
+          <SkillTitle>Frontend</SkillTitle>
+          <SkillImg src={frontend_img}></SkillImg>
         </SkillItem>
         <SkillItem>
-          <SkillTitle>Skill Title</SkillTitle>
-          <Skill />
-          <Skill />
+          <SkillTitle>Backend</SkillTitle>
+          <SkillImg src={backend_img}></SkillImg>
         </SkillItem>
         <SkillItem>
-          <SkillTitle>Skill Title</SkillTitle>
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
+          <SkillTitle>Mobile</SkillTitle>
+          <SkillImg src={mobile_img}></SkillImg>
         </SkillItem>
         <SkillItem>
-          <SkillTitle>Skill Title</SkillTitle>
-          <Skill />
-          <Skill />
-          <Skill />
-        </SkillItem>
-        <SkillItem>
-          <SkillTitle>Skill Title</SkillTitle>
-          <Skill />
-          <Skill />
-          <Skill />
+          <SkillTitle>Other</SkillTitle>
+          <SkillImg src={other_img}></SkillImg>
         </SkillItem>
       </ItemWrap>
     </SkillWrap>

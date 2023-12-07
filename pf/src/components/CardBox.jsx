@@ -2,16 +2,19 @@ import styled from 'styled-components';
 
 const BoxWrap = styled.div`
   display: flex;
-  width: 80%;
+  width: 60%;
+  height: 17rem;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+  align-content: flex-start;
   flex-wrap: wrap;
 `;
 
 const BoxItem = styled.div`
   display: flex;
   width: 33.33%;
+  height: 7rem;
   justify-content: center;
   align-items: center;
 `;
@@ -28,7 +31,19 @@ const Img = styled.div`
   margin-right: 1rem;
 `;
 
-const TextBox = styled.div``;
+const TextBox = styled.div`
+  width: 33.33%;
+  margin-left: 1rem;
+`;
+
+const TextTitle = styled.div`
+  font-size: 1.8rem;
+  font-weight: 600;
+`;
+const TextContent = styled.div`
+  margin-top: 0.2rem;
+  font-size: 1rem;
+`;
 
 const CardBox = ({ content }) => {
   return (
@@ -41,8 +56,8 @@ const CardBox = ({ content }) => {
                 <Img iconUrl={e.iconUrl} />
               </Imgbox>
               <TextBox>
-                <h1>{e.title}</h1>
-                <h2>{e.content}</h2>
+                <TextTitle>{e.title}</TextTitle>
+                <TextContent>{e.content}</TextContent>
               </TextBox>
             </BoxItem>
           </>

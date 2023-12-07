@@ -4,18 +4,14 @@ import { styled, css } from 'styled-components';
 
 const Header = () => {
   const [MobMenuShow, SetMobMenuShow] = useState('none');
-  const [ScrollY, SetScrollY] = useState(0);
-  const [ScrollActive, setScrollActive] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleScroll = () => {
-    if (ScrollY > 299) {
-      SetScrollY(window.scrollY);
-      setScrollActive(true);
-    } else {
-      SetScrollY(window.scrollY);
-      setScrollActive(false);
-    }
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   };
+  useEffect(() => {
+    window.addEventListener('scroll', updateScroll);
+  });
 
   const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -41,10 +37,16 @@ const Header = () => {
     display: block;
     position: fixed;
     background-color: transparent;
-    height: 100px;
+    height: 70px;
     width: 100%;
     z-index: 10;
 
+    ${props =>
+      props.view === true &&
+      css`
+        background-color: #ffffff;
+        box-shadow: 0 1px 0.3rem hsla(0, 0%, 80%, 0.8);
+      `}
     ${props =>
       props.mob &&
       css`
@@ -56,14 +58,34 @@ const Header = () => {
     display: flex;
     justify-content: space-between;
     width: 60%;
-    margin: 1.5vh auto;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
   `;
 
   const MenuBox = styled.div`
     display: flex;
+    color: #444444;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
   `;
 
-  const Title = styled.div``;
+  const Title = styled.div`
+    color: #444444;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    &&:hover {
+      color: #999999;
+      ${props =>
+        props.view === true &&
+        css`
+          color: #ff1100;
+        `};
+    }
+  `;
 
   const MobMenuListBox = styled.div`
     display: ${MobMenuShow};
@@ -71,7 +93,15 @@ const Header = () => {
   `;
 
   const PcMenuBtn = styled.div`
-    margin: 0 0.5vh 0 0.5vh;
+    padding: 0.5rem;
+    &&:hover {
+      color: #999999;
+      ${props =>
+        props.view === true &&
+        css`
+          color: #ff1100;
+        `};
+    }
   `;
 
   const Hamburger = styled.button``;
@@ -92,14 +122,21 @@ const Header = () => {
   return (
     <>
       <Desktop>
-        <HeaderMain>
+        <HeaderMain view={scrollPosition < 100 ? false : true}>
           <HeaderBox>
-            <Title>타이틀</Title>
+            <Title view={scrollPosition < 100 ? false : true}>
+              태균's 포트폴리오
+            </Title>
             <MenuBox>
-              <PcMenuBtn>메뉴1</PcMenuBtn>
-              <PcMenuBtn>메뉴2</PcMenuBtn>
-              <PcMenuBtn>메뉴3</PcMenuBtn>
-              <PcMenuBtn>메뉴4</PcMenuBtn>
+              <PcMenuBtn view={scrollPosition < 100 ? false : true}>
+                About me
+              </PcMenuBtn>
+              <PcMenuBtn view={scrollPosition < 100 ? false : true}>
+                Skills
+              </PcMenuBtn>
+              <PcMenuBtn view={scrollPosition < 100 ? false : true}>
+                Projects
+              </PcMenuBtn>
             </MenuBox>
           </HeaderBox>
         </HeaderMain>
