@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const BoxWrap = styled.div`
   display: flex;
-  width: 60%;
+  width: 65%;
   height: 17rem;
   margin: 0 auto;
   justify-content: center;
@@ -32,17 +32,18 @@ const Img = styled.div`
 `;
 
 const TextBox = styled.div`
-  width: 33.33%;
+  width: 50%;
   margin-left: 1rem;
 `;
 
 const TextTitle = styled.div`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
 `;
 const TextContent = styled.div`
   margin-top: 0.2rem;
   font-size: 1rem;
+  word-break: break-all;
 `;
 
 const CardBox = ({ content }) => {

@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import '../assets/slick-theme.css';
 import '../assets/slick.css';
-import img1 from '../assets/images/project2/1.png';
-import img2 from '../assets/images/project2/2.png';
-import img3 from '../assets/images/project2/3.png';
-import img4 from '../assets/images/project2/4.png';
-import img5 from '../assets/images/project2/5.png';
+import img1 from '../assets/images/project3/1.png';
+import img2 from '../assets/images/project3/2.png';
+import img3 from '../assets/images/project3/3.png';
+import img4 from '../assets/images/project3/4.png';
+import img5 from '../assets/images/project3/5.png';
+import img6 from '../assets/images/project3/6.png';
+import img7 from '../assets/images/project3/7.png';
 
 const SkillWrap = styled.div`
   height: 43rem;
@@ -152,14 +154,14 @@ const ImageBox = styled.img`
   height: 28rem;
 `;
 
-const ProjectBox2 = ({ project }) => {
+const ProjectBox3 = ({ project }) => {
   console.log(project);
   return (
     <SkillWrap>
       <ItemWrap>
         <ProjectItem height="50rem">
-          <ProjectTitle>IFOU 차세대 모바일</ProjectTitle>
-          <ProjectSubTitle>정산관리시스템</ProjectSubTitle>
+          <ProjectTitle>인건비 관리 어플</ProjectTitle>
+          <ProjectSubTitle>개인용 프로젝트</ProjectSubTitle>
           <ProjectContentWrap>
             <ProjectContentSliderWrap>
               <ProjectContentSlider>
@@ -170,37 +172,43 @@ const ProjectBox2 = ({ project }) => {
                     <ImageBox src={img3}></ImageBox>
                     <ImageBox src={img4}></ImageBox>
                     <ImageBox src={img5}></ImageBox>
+                    <ImageBox src={img6}></ImageBox>
+                    <ImageBox src={img7}></ImageBox>
                   </Slider>
                 </SliderBox>
               </ProjectContentSlider>
             </ProjectContentSliderWrap>
             <ProjectContentExplanWrap>
               <MainDescription>
-                차세대 IFOU를 모바일을 통해 쉽게 확인하려고 만든 모바일 전용
-                웹사이트입니다. 
+                기존 PHP로 구성 되어 있던 프로세스를 JAVA 언어로 변경 및 3-Tier
+                를 구축, UI/UX를 변경한 웹사이트입니다.
+                <br />
+                <br />
+                레거시 코드와 난잡한 쿼리를 정리하면서
               </MainDescription>
               <SubDescriptionBox>
                 <SubDescriptionLabel>기능</SubDescriptionLabel>
                 <SubDescriptionValue>
-                  전일매출/당일입금/매출통계 데이터 표출, 메뉴별 집계 데이터
-                  확인
+                  회원가입, 로그인, 일별 인건비 추가/수정/삭제, 인건비 집계
                 </SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Frontend</SubDescriptionLabel>
-                <SubDescriptionValue>React</SubDescriptionValue>
+                <SubDescriptionValue>Flutter, Dart</SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Backend</SubDescriptionLabel>
-                <SubDescriptionValue>SpringBoot</SubDescriptionValue>
+                <SubDescriptionValue>
+                  Firebase Authentication
+                </SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Database</SubDescriptionLabel>
-                <SubDescriptionValue>Oracle</SubDescriptionValue>
+                <SubDescriptionValue>Firebase Database</SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>
-                <SubDescriptionLabel>Demo</SubDescriptionLabel>
-                <SubDescriptionValue>https://asdasd.com</SubDescriptionValue>
+                <SubDescriptionLabel>GitHub</SubDescriptionLabel>
+                <SubDescriptionValue>Firebase Database</SubDescriptionValue>
               </SubDescriptionBox>
             </ProjectContentExplanWrap>
           </ProjectContentWrap>
@@ -210,4 +218,4 @@ const ProjectBox2 = ({ project }) => {
   );
 };
 
-export default ProjectBox2;
+export default ProjectBox3;

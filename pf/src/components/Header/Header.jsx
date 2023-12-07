@@ -14,17 +14,17 @@ const Header = () => {
   });
 
   const Desktop = ({ children }) => {
-    const isDesktop = useMediaQuery({ minWidth: 992 });
+    const isDesktop = useMediaQuery({ minWidth: 878 });
     return isDesktop ? children : null;
   };
 
   const Tablet = ({ children }) => {
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+    const isTablet = useMediaQuery({ minWidth: 877, maxWidth: 991 });
     return isTablet ? children : null;
   };
 
   const Mobile = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 767 });
+    const isMobile = useMediaQuery({ maxWidth: 877 });
     return isMobile ? children : null;
   };
 

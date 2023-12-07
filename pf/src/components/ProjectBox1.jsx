@@ -180,24 +180,24 @@ const ProjectBox1 = ({ project }) => {
             </ProjectContentSliderWrap>
             <ProjectContentExplanWrap>
               <MainDescription>
-                기존 PHP로 구성 되어 있던 프로세스를 JAVA 언어로 변경 및 3-Tier
-                를 구축, UI/UX를 변경한 웹사이트입니다.
+                기존 PHP로 구성 되어 있던 웹사이트를 JAVA 언어로 변경 및 3-Tier
+                를 구축, UI/UX를 변경하고 차세대 기능을 추가한 웹사이트입니다.
                 <br />
                 <br />
-                레거시 코드와 난잡한 쿼리를 정리하면서
+                레거시 코드와 쿼리를 정리하면서
               </MainDescription>
               <SubDescriptionBox>
                 <SubDescriptionLabel>기능</SubDescriptionLabel>
                 <SubDescriptionValue>
-                  거래 데이터 확인, 실시간 카드 취소, 각 메뉴별 집계, 엑셀
-                  다운로드, 엑셀 및 csv 업로드, 데이터 생성 및 삭제, 카드 데이터
-                  청구, 카드사 입금 데이터 확인 등
+                  로그인, OTP인증, 거래 데이터 확인, 실시간 카드 취소, 각 메뉴별
+                  집계, 엑셀 다운로드, 엑셀 및 csv 업로드, 데이터 생성 및 삭제,
+                  카드 데이터 청구, 카드사 입금 데이터 확인 등
                 </SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Frontend</SubDescriptionLabel>
                 <SubDescriptionValue>
-                  Javascript, Css, Dhtmlx
+                  Javascript, CSS, DHTMLX
                 </SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>

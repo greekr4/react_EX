@@ -6,19 +6,20 @@ import SkillBox from '../../components/SkillBox';
 import ArchiveBox from '../../components/ArchiveBox';
 import ProjectBox1 from '../../components/ProjectBox1';
 import ProjectBox2 from '../../components/ProjectBox2';
+import ProjectBox3 from '../../components/ProjectBox3';
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 992 });
+  const isDesktop = useMediaQuery({ minWidth: 878 });
   return isDesktop ? children : null;
 };
 
 const Tablet = ({ children }) => {
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+  const isTablet = useMediaQuery({ minWidth: 877, maxWidth: 991 });
   return isTablet ? children : null;
 };
 
 const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isMobile = useMediaQuery({ maxWidth: 877 });
   return isMobile ? children : null;
 };
 
@@ -104,32 +105,32 @@ const SubTitle = styled.div`
 const MainPage = () => {
   const content = [
     {
-      iconUrl: 'https://cdn-icons-png.flaticon.com/128/3214/3214746.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png',
       title: '이름',
       content: '김태균',
     },
     {
-      iconUrl: 'https://cdn-icons-png.flaticon.com/128/3214/3214747.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/3991/3991774.png',
       title: '생년월일',
-      content: '96.08.11',
+      content: '1996.08.11',
     },
     {
-      iconUrl: 'https://cdn-icons-png.flaticon.com/128/3214/3214749.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/447/447031.png',
       title: '주소',
       content: '경기도 고양시',
     },
     {
-      iconUrl: 'https://cdn-icons-png.flaticon.com/128/3214/3214744.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/126/126509.png',
       title: '연락처',
       content: '010-4191-1611',
     },
     {
-      iconUrl: 'https://cdn-icons-png.flaticon.com/128/3214/3214743.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/542/542689.png',
       title: '이메일',
       content: 'greekr4@naver.com',
     },
     {
-      iconUrl: 'https://cdn-icons-png.flaticon.com/128/3214/3214742.png',
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/1051/1051377.png',
       title: 'GitHub',
       content: 'https://github.com/greekr4',
     },
@@ -172,11 +173,23 @@ const MainPage = () => {
             <ArticleTitle fontColor="#ffffff">PROJECTS</ArticleTitle>
             <ProjectBox1 />
             <ProjectBox2 />
+            <ProjectBox3 />
           </ArticelWrap>
         </ArticelEl>
       </Desktop>
-      <Tablet>Tablet</Tablet>
-      <Mobile>Mobile</Mobile>
+      <Mobile>
+        <MainWrap>
+          <MainContentBox>
+            <MainTitle>김태균 포트폴리오</MainTitle>
+            <Divider />
+            <SubTitle>
+              안녕하세요.
+              <br /> 김소연입니다.
+              <br /> 저는 바보입니다.
+            </SubTitle>
+          </MainContentBox>
+        </MainWrap>
+      </Mobile>
     </>
   );
 };
