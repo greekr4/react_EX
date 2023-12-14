@@ -1,6 +1,10 @@
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 import { styled, css } from 'styled-components';
+import menuimg from '../../assets/images/menu.png';
+import './Header.css';
+import { CSSTransition } from 'react-transition-group';
+import Mobmenu from './Mobmenu';
 
 const Header = () => {
   const [MobMenuShow, SetMobMenuShow] = useState('none');
@@ -9,6 +13,7 @@ const Header = () => {
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   };
+
   useEffect(() => {
     window.addEventListener('scroll', updateScroll);
   });
@@ -50,14 +55,33 @@ const Header = () => {
     ${props =>
       props.mob &&
       css`
-        height: 5vh;
+        height: 8vh;
+        background-color: #ffffff;
       `}
+  `;
+
+  const HeaderMainMob = styled.header`
+    display: block;
+    position: fixed;
+    background-color: #ffffff;
+    height: 4rem;
+    width: 100%;
+    z-index: 10;
   `;
 
   const HeaderBox = styled.div`
     display: flex;
     justify-content: space-between;
     width: 60%;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+  `;
+
+  const HeaderBoxMob = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
     align-items: center;
     height: 100%;
     margin: 0 auto;
@@ -88,7 +112,8 @@ const Header = () => {
   `;
 
   const MobMenuListBox = styled.div`
-    display: ${MobMenuShow};
+    /* display: ${MobMenuShow}; */
+    display: block;
     width: 100%;
   `;
 
@@ -104,19 +129,29 @@ const Header = () => {
     }
   `;
 
-  const Hamburger = styled.button``;
+  const Hamburger = styled.div`
+    background-image: url(${menuimg});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+  `;
 
   const MobMenuList = styled.div`
     display: grid;
-    margin: 1vh;
+    background-color: white;
+    overflow: hidden;
+    height: ${props =>
+      props.show ? '100px' : '0'}; /* 초기 상태에서 높이를 0으로 설정 */
+    transition: height 0.2s ease;
   `;
 
-  const HandleClick = e => {
-    if (MobMenuShow == 'block') {
-      SetMobMenuShow('none');
-    } else {
-      SetMobMenuShow('block');
-    }
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -142,22 +177,12 @@ const Header = () => {
         </HeaderMain>
       </Desktop>
       <Mobile>
-        <HeaderMain mob>
-          <HeaderBox>
+        <HeaderMainMob>
+          <HeaderBoxMob>
             <Title>타이틀</Title>
-            <MenuBox>
-              <Hamburger onClick={HandleClick}>햄버거</Hamburger>
-            </MenuBox>
-          </HeaderBox>
-          <MobMenuListBox>
-            <MobMenuList>
-              <div>메뉴1</div>
-              <div>메뉴1</div>
-              <div>메뉴1</div>
-              <div>메뉴1</div>
-            </MobMenuList>
-          </MobMenuListBox>
-        </HeaderMain>
+            <Mobmenu></Mobmenu>
+          </HeaderBoxMob>
+        </HeaderMainMob>
       </Mobile>
     </>
   );

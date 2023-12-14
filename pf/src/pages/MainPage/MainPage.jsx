@@ -7,6 +7,11 @@ import ArchiveBox from '../../components/ArchiveBox';
 import ProjectBox1 from '../../components/ProjectBox1';
 import ProjectBox2 from '../../components/ProjectBox2';
 import ProjectBox3 from '../../components/ProjectBox3';
+import CardBox_mob from '../../components/CardBox_mob';
+import SkillBox_mob from '../../components/SkillBox_mob';
+import ProjectBox1_mob from '../../components/ProjectBox1_mob';
+import ProjectBox2_mob from '../../components/ProjectBox2_mob';
+import ProjectBox3_mob from '../../components/ProjectBox3_mob';
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 878 });
@@ -51,7 +56,7 @@ const MainContentBox = styled.div`
 
 const MainTitle = styled.div`
   font-family: 'Black Han Sans', sans-serif;
-  font-size: 5rem;
+  font-size: ${props => props.fontSize || '5rem'};
   font-weight: 300;
 `;
 
@@ -132,7 +137,7 @@ const MainPage = () => {
     {
       iconUrl: 'https://cdn-icons-png.flaticon.com/512/1051/1051377.png',
       title: 'GitHub',
-      content: 'https://github.com/greekr4',
+      content: 'github.com/greekr4',
     },
   ];
 
@@ -180,7 +185,11 @@ const MainPage = () => {
       <Mobile>
         <MainWrap>
           <MainContentBox>
-            <MainTitle>김태균 포트폴리오</MainTitle>
+            <MainTitle fontSize="4rem">
+              김태균
+              <br />
+              포트폴리오
+            </MainTitle>
             <Divider />
             <SubTitle>
               안녕하세요.
@@ -189,6 +198,26 @@ const MainPage = () => {
             </SubTitle>
           </MainContentBox>
         </MainWrap>
+        <ArticelEl bgColor="#ffffff">
+          <ArticelWrap>
+            <ArticleTitle>ABOUT ME</ArticleTitle>
+            <CardBox_mob content={content}></CardBox_mob>
+          </ArticelWrap>
+        </ArticelEl>
+        <ArticelEl bgColor="#f9c51d">
+          <ArticelWrap>
+            <ArticleTitle>SKILLS</ArticleTitle>
+            <SkillBox_mob />
+          </ArticelWrap>
+        </ArticelEl>
+        <ArticelEl bgColor="#5f9ca0">
+          <ArticelWrap>
+            <ArticleTitle fontColor="#ffffff">PROJECTS</ArticleTitle>
+            <ProjectBox1_mob />
+            <ProjectBox2_mob />
+            <ProjectBox3_mob />
+          </ArticelWrap>
+        </ArticelEl>
       </Mobile>
     </>
   );
