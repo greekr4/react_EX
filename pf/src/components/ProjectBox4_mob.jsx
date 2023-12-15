@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import '../assets/slick-theme.css';
 import '../assets/slick.css';
-import img1 from '../assets/images/project2/1.png';
-import img2 from '../assets/images/project2/2.png';
-import img3 from '../assets/images/project2/3.png';
-import img4 from '../assets/images/project2/4.png';
-import img5 from '../assets/images/project2/5.png';
+import img1 from '../assets/images/project4/1.png';
+import img2 from '../assets/images/project4/2.png';
+import img3 from '../assets/images/project4/3.png';
+import img4 from '../assets/images/project4/4.png';
+import img5 from '../assets/images/project4/5.png';
 
 const SkillWrap = styled.div`
   height: 100%;
@@ -157,19 +157,23 @@ const ImageBox = styled.img`
 
 const MyATag = styled.a`
   text-decoration: none;
-  color: orangered;
+  color: #666;
   &&:hover {
-    color: #666;
+    color: orangered;
   }
 `;
 
-const ProjectBox2_mob = ({ project }) => {
+const ProjectBox4_mob = ({ project }) => {
   return (
     <SkillWrap>
       <ItemWrap>
         <ProjectItem height="50rem">
-          <ProjectTitle>IFOU 차세대 모바일</ProjectTitle>
-          <ProjectSubTitle>정산관리시스템</ProjectSubTitle>
+          <ProjectTitle>
+            영남대학교병원
+            <br />
+            중간금 수납
+          </ProjectTitle>
+          <ProjectSubTitle>모바일 PG 결제</ProjectSubTitle>
           <ProjectContentWrap>
             <ProjectContentSliderWrap>
               <ProjectContentSlider>
@@ -187,35 +191,28 @@ const ProjectBox2_mob = ({ project }) => {
           </ProjectContentWrap>
           <MainDescription>
             <b>
-              정산 시스템을 모바일을 통해 쉽게 확인하려고 만든 모바일 전용 웹
+              영남대학교병원 중간금 모바일 결제 전용 웹 서비스는 입원 중인
+              환자들의 수납금을 모바일을 통해 간편하게 결제할 수 있는 웹
               서비스입니다.
-            </b>{' '}
-            PC 버전에 비해 기능을 최소화하고 가독성을 높여 편의성을 우선으로
-            개발하였습니다.
+            </b>
             <br />
             <br />
-            React와 SpringBoot 사용을 적극적으로 제안하여 시작한 프로젝트입니다.
-            React의 편의성과 SpringBoot JPA의 강력함을 느낄 수 있었습니다.
-            <br /> 또한 UI/UX를 직접 디자인하고, API Server를 직접 구현한 보람
-            있는 프로젝트입니다.
+            UI/UX부터 직접 디자인하여 순수 HTML 및 CSS와 PHP를 통해 프로젝트를
+            개발했습니다. 그뿐만 아니라 PG 결제 연동과 병원 내 데이터를 연동하여
+            좋은 경험이 되었던 프로젝트입니다.
           </MainDescription>
           <SubDescriptionBox>
             <SubDescriptionLabel>기능</SubDescriptionLabel>
             <SubDescriptionValue>
-              전일매출/당일입금/매출통계 데이터 표출, 메뉴별 집계 데이터 확인
+              로그인, 환자 정보 확인, 중간금 정보 확인, 중간금 결제, 중간금 부분
+              결제
             </SubDescriptionValue>
             <SubDescriptionLabel>Frontend</SubDescriptionLabel>
-            <SubDescriptionValue>React, Redux, JavaScript</SubDescriptionValue>
+            <SubDescriptionValue>HTML,CSS,JavaScript</SubDescriptionValue>
             <SubDescriptionLabel>Backend</SubDescriptionLabel>
-            <SubDescriptionValue>SpringBoot, JPA</SubDescriptionValue>
+            <SubDescriptionValue>PHP</SubDescriptionValue>
             <SubDescriptionLabel>Database</SubDescriptionLabel>
             <SubDescriptionValue>Oracle</SubDescriptionValue>
-            <SubDescriptionLabel>Demo</SubDescriptionLabel>
-            <SubDescriptionValue>
-              <MyATag href="http://3.27.125.162:80" target="_blank">
-                Click me!
-              </MyATag>
-            </SubDescriptionValue>
           </SubDescriptionBox>
         </ProjectItem>
       </ItemWrap>
@@ -223,4 +220,4 @@ const ProjectBox2_mob = ({ project }) => {
   );
 };
 
-export default ProjectBox2_mob;
+export default ProjectBox4_mob;

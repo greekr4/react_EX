@@ -222,7 +222,10 @@ const ProjectBox3 = ({ project }) => {
               <SubDescriptionBox>
                 <SubDescriptionLabel>GitHub</SubDescriptionLabel>
                 <SubDescriptionValue>
-                  <MyATag href="https://github.com/greekr4/flutter/tree/master/pay_master">
+                  <MyATag
+                    href="https://github.com/greekr4/flutter/tree/master/pay_master"
+                    target="_blank"
+                  >
                     github.com/greekr4/flutter/tree/master/pay_master
                   </MyATag>
                 </SubDescriptionValue>

@@ -12,6 +12,8 @@ import SkillBox_mob from '../../components/SkillBox_mob';
 import ProjectBox1_mob from '../../components/ProjectBox1_mob';
 import ProjectBox2_mob from '../../components/ProjectBox2_mob';
 import ProjectBox3_mob from '../../components/ProjectBox3_mob';
+import ProjectBox4 from '../../components/ProjectBox4';
+import ProjectBox4_mob from '../../components/ProjectBox4_mob';
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 878 });
@@ -184,6 +186,7 @@ const MainPage = () => {
             <ProjectBox1 />
             <ProjectBox2 />
             <ProjectBox3 />
+            <ProjectBox4 />
           </ArticelWrap>
         </ArticelEl>
       </Desktop>
@@ -226,6 +229,7 @@ const MainPage = () => {
             <ProjectBox1_mob />
             <ProjectBox2_mob />
             <ProjectBox3_mob />
+            <ProjectBox4_mob />
           </ArticelWrap>
         </ArticelEl>
       </Mobile>

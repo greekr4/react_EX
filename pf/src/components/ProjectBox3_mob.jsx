@@ -157,6 +157,14 @@ const ImageBox = styled.img`
   height: 15rem;
 `;
 
+const MyATag = styled.a`
+  text-decoration: none;
+  color: #666;
+  &&:hover {
+    color: orangered;
+  }
+`;
+
 const ProjectBox3_mob = ({ project }) => {
   return (
     <SkillWrap>
@@ -182,8 +190,15 @@ const ProjectBox3_mob = ({ project }) => {
             </ProjectContentSliderWrap>
           </ProjectContentWrap>
           <MainDescription>
-            차세대 IFOU를 모바일을 통해 쉽게 확인하려고 만든 모바일 전용
-            웹사이트입니다.
+            <b>
+              아버지가 엑셀로 관리하던 데이터 유실의 위험성을 줄이고 데이터 편집
+              및 저장 관리에 편의성을 높이고자 개발한 간단한 앱 서비스입니다.
+            </b>
+            <br />
+            <br />앱 개발을 공부하던 중 Flutter를 접하고 처음 개발한
+            프로젝트입니다. 간편한 크로스 플랫폼 개발과 네이티브 앱과 거의
+            동일한 성능의 UI를 제공, Material Design과 Cupertino 스타일의 위젯을
+            사용하여 디자인하는 부분에서 Flutter의 강력함을 느낄 수 있었습니다.
           </MainDescription>
           <SubDescriptionBox>
             <SubDescriptionLabel>기능</SubDescriptionLabel>
@@ -197,7 +212,16 @@ const ProjectBox3_mob = ({ project }) => {
             <SubDescriptionLabel>Database</SubDescriptionLabel>
             <SubDescriptionValue>Firebase Database</SubDescriptionValue>
             <SubDescriptionLabel>GitHub</SubDescriptionLabel>
-            <SubDescriptionValue>dd</SubDescriptionValue>
+            <SubDescriptionValue>
+              <MyATag
+                href="https://github.com/greekr4/flutter/tree/master/pay_master"
+                target="_blank"
+              >
+                github.com/greekr4/
+                <br />
+                flutter/tree/master/pay_master
+              </MyATag>
+            </SubDescriptionValue>
           </SubDescriptionBox>
         </ProjectItem>
       </ItemWrap>

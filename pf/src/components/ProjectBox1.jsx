@@ -116,9 +116,9 @@ const ImageBox = styled.img`
 
 const MyATag = styled.a`
   text-decoration: none;
-  color: #666;
+  color: orangered;
   &&:hover {
-    color: orangered;
+    color: #666;
   }
 `;
 
@@ -189,7 +189,9 @@ const ProjectBox1 = ({ project }) => {
               <SubDescriptionBox>
                 <SubDescriptionLabel>Demo</SubDescriptionLabel>
                 <SubDescriptionValue>
-                  <MyATag href="zz">https://asdasd.com</MyATag>
+                  <MyATag href="zz" target="_blank">
+                    Click me!
+                  </MyATag>
                 </SubDescriptionValue>
               </SubDescriptionBox>
             </ProjectContentExplanWrap>
