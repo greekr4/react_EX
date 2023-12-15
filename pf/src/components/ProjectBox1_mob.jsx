@@ -220,7 +220,7 @@ const ProjectBox1_mob = ({ project }) => {
             <SubDescriptionValue>Oracle</SubDescriptionValue>
             <SubDescriptionLabel>Demo</SubDescriptionLabel>
             <SubDescriptionValue>
-              <MyATag href="zz" target="_blank">
+              <MyATag href="http://3.27.125.162:8001" target="_blank">
                 Click me!
               </MyATag>
             </SubDescriptionValue>
