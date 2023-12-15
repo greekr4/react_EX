@@ -152,14 +152,21 @@ const ImageBox = styled.img`
   height: 28rem;
 `;
 
+const MyATag = styled.a`
+  text-decoration: none;
+  color: #666;
+  &&:hover {
+    color: orangered;
+  }
+`;
+
 const ProjectBox2 = ({ project }) => {
-  console.log(project);
   return (
     <SkillWrap>
       <ItemWrap>
         <ProjectItem height="50rem">
           <ProjectTitle>IFOU 차세대 모바일</ProjectTitle>
-          <ProjectSubTitle>정산관리시스템</ProjectSubTitle>
+          <ProjectSubTitle>정산관리시스템 (mobile)</ProjectSubTitle>
           <ProjectContentWrap>
             <ProjectContentSliderWrap>
               <ProjectContentSlider>
@@ -176,8 +183,19 @@ const ProjectBox2 = ({ project }) => {
             </ProjectContentSliderWrap>
             <ProjectContentExplanWrap>
               <MainDescription>
-                차세대 IFOU를 모바일을 통해 쉽게 확인하려고 만든 모바일 전용
-                웹사이트입니다. 
+                <b>
+                  정산 시스템을 모바일을 통해 쉽게 확인하려고 만든 모바일 전용
+                  웹 서비스입니다.
+                </b>{' '}
+                PC 버전에 비해 기능을 최소화하고 가독성을 높여 편의성을 우선으로
+                개발하였습니다.
+                <br />
+                <br />
+                React와 SpringBoot 사용을 적극적으로 제안하여 시작한
+                프로젝트입니다. React의 편의성과 SpringBoot JPA의 강력함을 느낄
+                수 있었습니다.
+                <br /> 또한 UI/UX를 직접 디자인하고, API Server를 직접 구현한
+                보람 있는 프로젝트입니다.
               </MainDescription>
               <SubDescriptionBox>
                 <SubDescriptionLabel>기능</SubDescriptionLabel>
@@ -188,11 +206,13 @@ const ProjectBox2 = ({ project }) => {
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Frontend</SubDescriptionLabel>
-                <SubDescriptionValue>React</SubDescriptionValue>
+                <SubDescriptionValue>
+                  React, Redux, JavaScript
+                </SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Backend</SubDescriptionLabel>
-                <SubDescriptionValue>SpringBoot</SubDescriptionValue>
+                <SubDescriptionValue>SpringBoot, JPA</SubDescriptionValue>
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Database</SubDescriptionLabel>
@@ -200,7 +220,9 @@ const ProjectBox2 = ({ project }) => {
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Demo</SubDescriptionLabel>
-                <SubDescriptionValue>https://asdasd.com</SubDescriptionValue>
+                <SubDescriptionValue>
+                  <MyATag href="zz">https://asdasd.com</MyATag>
+                </SubDescriptionValue>
               </SubDescriptionBox>
             </ProjectContentExplanWrap>
           </ProjectContentWrap>

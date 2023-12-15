@@ -48,6 +48,19 @@ const TextContent = styled.div`
   text-align: center;
 `;
 
+const AContent = styled.a`
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  word-break: break-all;
+  text-align: center;
+  color: #343434;
+  text-decoration: none;
+  &&:hover {
+    color: orangered;
+  }
+`;
+
 const CardBox_mob = ({ content }) => {
   return (
     <BoxWrap>
@@ -60,7 +73,15 @@ const CardBox_mob = ({ content }) => {
               </Imgbox>
               <TextBox>
                 <TextTitle>{e.title}</TextTitle>
-                <TextContent>{e.content}</TextContent>
+                {e.tag === 'tel' ? (
+                  <AContent href={'tel:' + e.content}>{e.content}</AContent>
+                ) : e.tag === 'email' ? (
+                  <AContent href={'mailto:' + e.content}>{e.content}</AContent>
+                ) : e.tag === 'link' ? (
+                  <AContent href={'https://' + e.content}>{e.content}</AContent>
+                ) : (
+                  <TextContent>{e.content}</TextContent>
+                )}
               </TextBox>
             </BoxItem>
           </>

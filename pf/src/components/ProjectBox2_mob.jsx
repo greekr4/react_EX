@@ -156,7 +156,6 @@ const ImageBox = styled.img`
 `;
 
 const ProjectBox2_mob = ({ project }) => {
-  console.log(project);
   return (
     <SkillWrap>
       <ItemWrap>

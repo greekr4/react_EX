@@ -11,7 +11,7 @@ import img6 from '../assets/images/project1/6.png';
 import img7 from '../assets/images/project1/7.png';
 
 const SkillWrap = styled.div`
-  height: 43rem;
+  height: 51rem;
 `;
 
 const ItemWrap = styled.div`
@@ -27,6 +27,7 @@ const ProjectItem = styled.div`
   border-radius: 10px;
   width: 70rem;
   padding: 1rem;
+  height: 100%;
   /* height: ${props => props.height}; */
 `;
 
@@ -65,41 +66,6 @@ const SliderBox = styled.div`
   height: 100%;
   margin: 0 auto;
 `;
-const PrevArrow = props => {
-  const { className, style, onClick } = props;
-
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: 'blcok',
-        background: 'red',
-        top: '105%',
-        left: '40%',
-      }}
-      onClick={onClick}
-    ></div>
-  );
-};
-
-const NextArrow = props => {
-  const { className, style, onClick } = props;
-
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: 'blcok',
-        background: 'red',
-        top: '105%',
-        left: '60%',
-      }}
-      onClick={onClick}
-    ></div>
-  );
-};
 
 const settings = {
   dots: true,
@@ -110,12 +76,6 @@ const settings = {
   // prevArrow: <PrevArrow />,
   // nextArrow: <NextArrow />,
 };
-
-const Testdiv = styled.div`
-  width: 100%;
-  height: 28rem;
-  background-color: aliceblue;
-`;
 
 const MainDescription = styled.div`
   width: 88%;
@@ -154,8 +114,15 @@ const ImageBox = styled.img`
   height: 28rem;
 `;
 
+const MyATag = styled.a`
+  text-decoration: none;
+  color: #666;
+  &&:hover {
+    color: orangered;
+  }
+`;
+
 const ProjectBox1 = ({ project }) => {
-  console.log(project);
   return (
     <SkillWrap>
       <ItemWrap>
@@ -180,11 +147,22 @@ const ProjectBox1 = ({ project }) => {
             </ProjectContentSliderWrap>
             <ProjectContentExplanWrap>
               <MainDescription>
-                기존 PHP로 구성 되어 있던 웹사이트를 JAVA 언어로 변경 및 3-Tier
-                를 구축, UI/UX를 변경하고 차세대 기능을 추가한 웹사이트입니다.
+                <b>
+                  실시간 VAN 거래 데이터 송수신을 기본으로 카드 거래, 카드사
+                  입금 반송 데이터를 한 곳에서 통합관리가 가능한 웹
+                  서비스입니다.
+                </b>
                 <br />
                 <br />
-                레거시 코드와 쿼리를 정리하면서
+                기존 PHP로 구성되어 있던 웹 서비스를 JAVA 언어로 변경 및 3-Tier
+                아키텍처를 구축, UI/UX를 변경하고 차세대 기능을 추가하였습니다.
+                <br />
+                <br />
+                빅데이터를 다루는 서비스의 레거시 코드와 쿼리를 최적화하여
+                데이터 검색 속도를 현저히 향상시키고 클라이언트 편의를 개선하여
+                더 나은 서비스를 제공하였습니다. 또한 언어 변경 및 3-Tier
+                아키텍처 구축 및 Git 협업을 통해 유지보수의 편의성과 보안성을
+                개선한 프로젝트입니다.
               </MainDescription>
               <SubDescriptionBox>
                 <SubDescriptionLabel>기능</SubDescriptionLabel>
@@ -210,7 +188,9 @@ const ProjectBox1 = ({ project }) => {
               </SubDescriptionBox>
               <SubDescriptionBox>
                 <SubDescriptionLabel>Demo</SubDescriptionLabel>
-                <SubDescriptionValue>https://asdasd.com</SubDescriptionValue>
+                <SubDescriptionValue>
+                  <MyATag href="zz">https://asdasd.com</MyATag>
+                </SubDescriptionValue>
               </SubDescriptionBox>
             </ProjectContentExplanWrap>
           </ProjectContentWrap>

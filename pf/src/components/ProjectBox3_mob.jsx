@@ -158,7 +158,6 @@ const ImageBox = styled.img`
 `;
 
 const ProjectBox3_mob = ({ project }) => {
-  console.log(project);
   return (
     <SkillWrap>
       <ItemWrap>
@@ -175,6 +174,8 @@ const ProjectBox3_mob = ({ project }) => {
                     <ImageBox src={img3}></ImageBox>
                     <ImageBox src={img4}></ImageBox>
                     <ImageBox src={img5}></ImageBox>
+                    <ImageBox src={img6}></ImageBox>
+                    <ImageBox src={img7}></ImageBox>
                   </Slider>
                 </SliderBox>
               </ProjectContentSlider>

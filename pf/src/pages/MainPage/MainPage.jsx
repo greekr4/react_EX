@@ -128,16 +128,19 @@ const MainPage = () => {
       iconUrl: 'https://cdn-icons-png.flaticon.com/512/126/126509.png',
       title: '연락처',
       content: '010-4191-1611',
+      tag: 'tel',
     },
     {
       iconUrl: 'https://cdn-icons-png.flaticon.com/512/542/542689.png',
       title: '이메일',
       content: 'greekr4@naver.com',
+      tag: 'email',
     },
     {
       iconUrl: 'https://cdn-icons-png.flaticon.com/512/1051/1051377.png',
       title: 'GitHub',
       content: 'github.com/greekr4',
+      tag: 'link',
     },
   ];
 
@@ -149,9 +152,11 @@ const MainPage = () => {
             <MainTitle>김태균 포트폴리오</MainTitle>
             <Divider />
             <SubTitle>
-              안녕하세요.
-              <br /> 김소연입니다.
-              <br /> 저는 바보입니다.
+              안녕하세요! <br />
+              열정적이고 꼼꼼한 성격을 가진 풀 스택 웹 개발자입니다. <br />
+              공부는 제 밥 같은 존재로, 끊임없이 성장하는 것을 즐기는 편입니다.
+              <br />
+              도전을 두려워하지 않고, 항상 새로운 기술과 도전에 열려있습니다.
             </SubTitle>
           </MainContentBox>
         </MainWrap>
@@ -192,9 +197,14 @@ const MainPage = () => {
             </MainTitle>
             <Divider />
             <SubTitle>
-              안녕하세요.
-              <br /> 김소연입니다.
-              <br /> 저는 바보입니다.
+              안녕하세요! <br />
+              열정적이고 꼼꼼한 성격을 가진
+              <br />풀 스택 웹 개발자입니다. <br />
+              공부는 제 밥 같은 존재로, 끊임없이 성장하는 것을 즐기는 편입니다.
+              <br />
+              도전을 두려워하지 않고,
+              <br />
+              항상 새로운 기술과 도전에 열려있습니다.
             </SubTitle>
           </MainContentBox>
         </MainWrap>
