@@ -11,7 +11,7 @@ import img6 from '../assets/images/project1/6.png';
 import img7 from '../assets/images/project1/7.png';
 
 const SkillWrap = styled.div`
-  height: 43rem;
+  height: 45rem;
 `;
 
 const ItemWrap = styled.div`
