@@ -11,14 +11,15 @@ import img6 from '../assets/images/project1/6.png';
 import img7 from '../assets/images/project1/7.png';
 
 const SkillWrap = styled.div`
-  height: 51rem;
+  height: 43rem;
 `;
 
 const ItemWrap = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-content: space-around;
-  height: calc(100% - (7.5rem));
+  height: 100%;
+  /* height: calc(100% - (7.5rem)); */
 `;
 
 const ProjectItem = styled.div`
