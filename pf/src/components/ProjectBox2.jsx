@@ -222,7 +222,7 @@ const ProjectBox2 = ({ project }) => {
               <SubDescriptionBox>
                 <SubDescriptionLabel>Demo</SubDescriptionLabel>
                 <SubDescriptionValue>
-                  <MyATag href="http://3.27.125.162:80" target="_blank">
+                  <MyATag href="http://3.27.125.162:8002" target="_blank">
                     Click me!
                   </MyATag>
                 </SubDescriptionValue>
